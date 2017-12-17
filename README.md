@@ -1,2 +1,1 @@
-# xDrop
-Innowacyjny plugin na drop. Open Source!
+# Co to jest xDrop?
