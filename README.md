@@ -1,5 +1,5 @@
 # Co to jest xDrop?
-xDrop jest kontynuacja pluginu Inder00/Drop link:https://github.com/Inder00/Drop
+xDrop jest kontynuacja pluginu Inder00/Drop link:[Link]https://github.com/Inder00/Drop
 
 # TODO:
 
