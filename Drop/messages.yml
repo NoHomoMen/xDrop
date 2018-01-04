@@ -1,0 +1,53 @@
+#Level UP
+#Zmienne: {LEVEL}
+levelup: '&8» &7Gratulacje awansowales na &6{LEVEL}&7 poziom gornictwa!'
+
+#Wlaczenie wiadomoci
+enableMessages: '&8» &aWlaczyles &7wiadomosci dropu'
+
+#Wylaczenie wiadomosci
+disableMessages: '&8» &cWylaczyles &7wiadomosci dropu'
+
+#Wlaczenie cobblestone
+enableCobblestone: '&8» &aWlaczyles &7cobblestone' 
+
+#Wylaczenie cobblestone
+disableCobblestone: '&8» &cWylaczyles &7cobblestone' 
+
+#Wlaczenie dropou
+enableDrops: '&8» &aWlaczyles &7drop'
+
+#Wylaczenie dropou
+disableDrops: '&8» &cWylaczyles &7drop'
+
+#Brak uprawnien
+noPermission: '&8» &cNie posiadasz uprawnien do wykonania tej komendy'
+
+#Poprawne uzycie /turbodrop
+correctTurbodrop: '&8» &cPoprawne uzycie /turbodrop <all/give> <czas> <nick>'
+
+#Dostepne argumenty
+availableArguments: '&8» &cDostepne argumenty: {ARGUMENTS}'
+
+#Brak podanego czasu
+giveTime: '&8» &cPodaj czas trwania turbodropu'
+
+#Brak podanego gracza
+givePlayerNickname: '&8» &cPodaj nick gracza, ktoremu chcesz nadac turbodrop'
+
+#Nieprawidlowo podany czas
+correctTime: '&8» &cNieprawidlowo podany czas'
+
+#Gracz jest offline
+playerOffline: '&8» &cPodany gracz jest aktualnie OFFLINE'
+
+#Limit czasu trwania Turbodropu
+limitTimeTurbodrop: '&8» &cMozesz nadac turobdrop na max. 1dzien! (86400sekund)'
+
+#Broadcast - Turbodrop dla wszystkich
+#Zmienne: {ADMIN}, {TIME}
+broadcastTurbodropall: '&8» &7Caly serwer otrzymal turbodrop na &6{TIME} &7od &6{ADMIN}'
+
+#Broadcast - Turbodrop dla gracza
+#Zmienne: {PLAYER}, {ADMIN}, {TIME}
+broadcastTurbodrop: '&8» &7Gracz &6{PLAYER} &7otrzymal turbodrop na &6{TIME} &7od &6{ADMIN}'

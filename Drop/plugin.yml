@@ -1,0 +1,9 @@
+name: rhDrop
+main: pl.inder00.drop.rhDrop
+version: 0.9.93
+author: Inder00
+commands:
+  drop:
+    description: Drop
+  turbodrop:
+    description: Turbodrop

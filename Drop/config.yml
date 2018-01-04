@@ -1,0 +1,339 @@
+#   rhDrop
+#   Wersja: v0.9.9
+#   Autor: Inder00
+
+config:
+  #Debug
+  debug: false
+  
+  #Sposob zapisywania danych: FLAT, SQLite, MySQL
+  datatype: 'flat'
+  
+  #Fortunki
+  fortune:
+    #Fortuna 1 - Maksymalna ilosc itemkow
+    level1: 2
+    
+    #Fortuna 2 - Maksymalna ilosc itemkow
+    level2: 3
+    
+    #Fortuna 3 - Maksymalna ilosc itemkow
+    level3: 4
+  
+  #Limit czasu turbodropu (w sekundach)
+  limitTurbodrop: 86400 #1 dzien
+
+  #Anulowanie rud
+  cancel-ores:
+  - DIAMOND_ORE
+  - IRON_ORE
+  - COAL_ORE
+  - GOLD_ORE
+  - LAPIS_ORE
+  
+  #Procent do kazdego dropu, ktory jest doliczany podczas aktywnego turbodropu
+  activeTurbodropLoot: 2.3
+  
+  #Potrzebna ilosc XP do awansu do nastepnego poziomu
+  xp: 1100
+  
+  #Gui
+  gui:
+    #Nazwa GUI 
+    name: '&8» &6Drop &8»'
+    
+    selections:
+      drop:
+        #Nazwa w GUI 
+        name: '&8» &6Drop z kamienia &8»'
+        
+        #Item w GUI 
+        item: STONE
+        
+        #Lore
+        lore:
+        - '&8» &7Kliknij, aby wyswietlic drop z kamienia'
+        #Pod-GUI
+        show:
+        
+          #Lore kazdego itemku
+          #Zmienne: {MINY}, {MAXY}, {CHANCE}, {BIOMES}, {TOOLS}, {FORTUNE}
+          lore:
+          - '&8» &7Szansa: &6{CHANCE}'
+          - '&8» &7Wysokosc: &6{MINY}-{MAXY}'
+          - '&8» &7Na biomach: &6{BIOMES}'
+          - '&8» &7Narzedzia: &6{TOOLS}'
+          - '&8» &7Fortuna: &6{FORTUNE}'
+          - '&8» &7Aktywny: &6{STATUS}'
+      top:
+        #Nazwa w GUI 
+        name: '&8» &6Najlepsi gornicy &8»'
+        
+        #Item w GUI 
+        item: NETHER_STAR
+        
+        #Lore
+        lore:
+        - '&8» &7Kliknij, aby wyswtetlic najlepszych gornikow'
+        
+        #Pod-GUI
+        show:
+          #Nazwa
+          name: '&8» &6{POZYCJA}. &7{NICKNAME}'
+          
+          #Lore
+          lore:
+          - '&8» &7XP: &6{XP}/{NEED}'
+          - '&8» &7Poziom w gornictwie: &6{LEVEL}'
+      msg:
+        #Nazwa w GUI 
+        name: '&8» &6Wiadomosci &8»'
+        
+        #Item w GUI 
+        item: PAPER
+      stats:
+        #Nazwa w GUI 
+        name: '&8» &6Statystyki &8»'
+        
+        #Item w GUI 
+        item: EYE_OF_ENDER
+        
+        #Lore
+        lore: 
+        - '&8» &7Kliknij, aby wyswietlic statystyki'
+        
+        #Pod-GUI
+        show:
+          xp:
+            #Item w GUI 
+            item: EXP_BOTTLE
+            
+            #Nazwa 
+            #Zmienne: {XP}, {NEED}
+            name: '&8» &7XP: &6{XP}/{NEED}'
+          level:
+            #Item w GUI 
+            item: DIAMOND_PICKAXE
+            
+            #Nazwa
+            #Zmienne: {LEVEL}
+            name: '&8» &7Poziom: &6{LEVEL}'
+      dropdisable:
+        #Nazwa w GUI 
+        name: '&8» &6Drop &8»'
+        
+        #Item w GUI 
+        item: GOLD_SPADE
+        
+      cobble:
+        #Nazwa w GUI 
+        name: '&8» &6Cobblestone &8»'
+        
+        #Item w GUI 
+        item: COBBLESTONE
+      turbodrop:
+        #Nazwa w GUI 
+        name: '&8» &6Turbodrop &8»'
+        
+        #Item w GUI 
+        item: DIAMOND_PICKAXE
+        
+        #Lore
+        #Zmienne: {TIMELEFT}
+        lore:
+        - '&8» &7Pozostaly czas: &6{TIMELEFT}'
+        - '&8» &7Mozesz zakupic na &6WWW'
+        
+      statusON:
+      - '&8» &7Aktywny: &aTak'
+      - '&8» &7Kliknij, aby zmienic'
+      statusOFF:
+      - '&8» &7Aktywny: &cNie'
+      - '&8» &7Kliknij, aby zmienic'
+      active: '&aTak'
+      disable: '&cNie'
+      
+  
+
+#Baza danych
+mysql:
+  ip: '127.0.0.1'
+  username: 'root'
+  password: ''
+  dbname: 'drop'
+  port: 3306
+
+#Dropy
+drops:
+  'DIAMENT':
+    #Procent
+    chance: 3.7
+    
+    #Punkty gornictwa
+    xp: 7
+    
+    #Fortuna
+    fortune: true
+    
+    #Wiadomsc
+    #{PLAYER}, {XP}, {AMOUNT}
+    message: '&8» &7Wydropiles &bDiament &7(&6{AMOUNT}szt&7) &6+{XP}'
+    
+    #Biomy
+    biome:
+    - 'Plains'
+    - 'Forest'
+    
+    #Wysokosc
+    height:
+      minY: 0
+      maxY: 256
+      
+    #Exp
+    exp: 4
+    
+    #Narzedzia, ktorymi mozna to wydropic
+    tools: []
+     
+    drop:
+      #Co ma dropic
+      what: DIAMOND
+      
+      #Z czego
+      from: STONE
+  'ZELAZO':
+    #Procent
+    chance: 4.7
+    
+    #Punkty gornictwa
+    xp: 3
+    
+    #Fortuna
+    fortune: true
+    
+    #Wiadomsc
+    #{PLAYER}, {XP}, {AMOUNT}
+    message: '&8» &7Wydropiles &7Zelazo &7(&6{AMOUNT}szt&7) &6+{XP}'
+    
+    #Biomy
+    biome: []
+    
+    #Wysokosc
+    height:
+      minY: 0
+      maxY: 90
+      
+    #Exp
+    exp: 5
+    
+    #Narzedzia, ktorymi mozna to wydropic
+    tools: []
+     
+    drop:
+      #Co ma dropic
+      what: IRON_INGOT
+      
+      #Z czego
+      from: STONE
+  'ZLOTO':
+    #Procent
+    chance: 4.1
+    
+    #Punkty gornictwa
+    xp: 12
+    
+    #Fortuna
+    fortune: true
+    
+    #Wiadomsc
+    #{PLAYER}, {XP}, {AMOUNT}
+    message: '&8» &7Wydropiles &6Zloto &7(&6{AMOUNT}szt&7) &6+{XP}'
+    
+    #Biomy
+    biome: []
+    
+    #Wysokosc
+    height:
+      minY: 0
+      maxY: 9
+      
+    #Exp
+    exp: 7
+    
+    #Narzedzia, ktorymi mozna to wydropic
+    tools: []
+     
+    drop:
+      #Co ma dropic
+      what: GOLD_INGOT
+      
+      #Z czego
+      from: STONE
+  'WEGIEL':
+    #Procent
+    chance: 5.2
+    
+    #Punkty gornictwa
+    xp: 2
+    
+    #Fortuna
+    fortune: true
+    
+    #Wiadomsc
+    #{PLAYER}, {XP}, {AMOUNT}
+    message: '&8» &7Wydropiles &0Wegiel &7(&6{AMOUNT}szt&7) &6+{XP}'
+    
+    #Biomy
+    biome: []
+    
+    #Wysokosc
+    height:
+      minY: 0
+      maxY: 90
+      
+    #Exp
+    exp: 3
+    
+    #Narzedzia, ktorymi mozna to wydropic
+    tools: []
+     
+    drop:
+      #Co ma dropic
+      what: COAL
+      
+      #Z czego
+      from: STONE
+  'EMERALD':
+    #Procent
+    chance: 3.7
+    
+    #Punkty gornictwa
+    xp: 4
+    
+    #Fortuna
+    fortune: true
+    
+    #Wiadomsc
+    #{PLAYER}, {XP}, {AMOUNT}
+    message: '&8» &7Wydropiles &aEmerald &7(&6{AMOUNT}szt&7) &6+{XP}'
+    
+    #Biomy
+    biome: []
+    
+    #Wysokosc
+    height:
+      minY: 0
+      maxY: 90
+      
+    #Exp
+    exp: 5
+    
+    #Narzedzia, ktorymi mozna to wydropic
+    tools: []
+     
+    drop:
+      #Co ma dropic
+      what: EMERALD
+      
+      #Z czego
+      from: STONE
